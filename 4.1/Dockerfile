@@ -12,7 +12,7 @@ RUN apt-get update -qq \
     && cd mono \
     && git reset --hard 53dc56ee39a8e3b013231957aca4671b202c6410 \
     && ./autogen.sh --prefix="/usr/local" \
-    && make \
+    && make -j4 \
     && make install \
     && cd .. \
     && rm mono -r
