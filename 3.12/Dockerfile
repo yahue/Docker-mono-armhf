@@ -6,8 +6,9 @@ MAINTAINER Lukas Novotny <lukas@dramiel.com>
 # based on dockerfile by Michael Friis <friism@gmail.com>
 
 RUN apt-get update \
-	&& apt-get install -y wget libgdiplus
+	&& apt-get install -qy wget libgdiplus
 
 RUN cd ~/ \
 	&& wget https://www.dropbox.com/s/cluk56260rkqoi4/mono_3.12-1_armhf.deb?dl=1 \
-	&& dpkg -i mono_3.12-1_armhf.deb?dl=1
+	&& dpkg -i mono_3.12-1_armhf.deb?dl=1 \
+	&& mono /usr/local/bin/mono/4.5/mozroots.exe --import --sync
