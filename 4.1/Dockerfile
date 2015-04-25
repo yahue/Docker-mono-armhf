@@ -17,3 +17,6 @@ RUN apt-get update -qq \
     && make install \
     && cd .. \
     && rm mono -r
+
+# Sync certificates from system
+RUN mono cert-sync.exe /etc/ssl/certs/ca-certificates.crt
