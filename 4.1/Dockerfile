@@ -10,7 +10,7 @@ RUN apt-get update -qq \
     && cd ~ \
     && git clone https://github.com/mono/mono.git \
     && cd mono \
-    && git reset --hard 53dc56ee39a8e3b013231957aca4671b202c6410 \
+    && git reset --hard ef43c151e2bfee5f1e86ea3d6e375472028a013a \
     && ./autogen.sh --prefix="/usr/local" \
     && make get-monolite-latest \
     && make EXTERNAL_MCS="${PWD}/mcs/class/lib/monolite/basic.exe" -j4 \
